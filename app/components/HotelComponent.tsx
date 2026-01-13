@@ -91,31 +91,31 @@ export default function Hotel({ properties }: Props) {
                     backgroundPosition: 'center',
                   }}
                 >
-                  <div className="absolute inset-0 bg-black/70" />
+                  <div className="absolute inset-0 bg-overlay" />
 
                   <div className="relative p-8 text-white min-h-[220px]">
                     <h3 className="text-3xl font-bold mb-2">{hotel.name}</h3>
                     <p className="max-w-3xl text-sm opacity-90">{hotel.description}</p>
 
                     <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                      <span className="rounded-full bg-sky-600/70 px-4 py-1">{hotel.hotel_class}</span>
+                      <span className="rounded-full badge-primary px-4 py-1">{hotel.hotel_class}</span>
 
                       {hotel.rate_per_night?.lowest && (
-                        <span className="rounded-full bg-sky-600/70 px-4 py-1">From ${hotel.rate_per_night.lowest}/night</span>
+                        <span className="rounded-full badge-primary px-4 py-1">From ${hotel.rate_per_night.lowest}/night</span>
                       )}
                     </div>
 
                     {hotel.amenities?.length > 0 && (
                       <div className="mt-6 flex flex-wrap gap-2">
                         {hotel.amenities.slice(0, 6).map((a, i2) => (
-                          <span key={i2} className="rounded-full bg-sky-600/70 px-3 py-1 text-xs backdrop-blur-md">{a}</span>
+                          <span key={i2} className="rounded-full badge-primary px-3 py-1 text-xs backdrop-blur-md">{a}</span> 
                         ))}
                       </div>
                     )}
                   </div>
 
                   {hotel.images && hotel.images.length > 1 && (
-                    <div className="bg-black/60 backdrop-blur-md">
+                    <div className="bg-glass backdrop-blur-md">
                       <p className="text-white text-xl p-4 font-semibold">Hotel Gallery</p>
 
                       <div className="flex gap-4 px-4 pb-6 overflow-x-auto scrollbar-hide">
@@ -133,16 +133,16 @@ export default function Hotel({ properties }: Props) {
 
         {hotelList.length > 1 && (
           <>
-            <button onClick={prev} aria-label="Previous" className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2">
+            <button onClick={prev} aria-label="Previous" className="absolute left-4 top-1/2 -translate-y-1/2 btn-ghost text-white rounded-full p-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
             </button>
-            <button onClick={next} aria-label="Next" className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2">
+            <button onClick={next} aria-label="Next" className="absolute right-4 top-1/2 -translate-y-1/2 btn-ghost text-white rounded-full p-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
             </button>
 
             <div className="flex items-center justify-center gap-2 mt-4">
               {hotelList.map((_, dotIdx) => (
-                <button key={dotIdx} onClick={() => setIndex(dotIdx)} className={`h-2 w-8 rounded-full ${dotIdx === index ? 'bg-sky-500' : 'bg-gray-600/50'}`} aria-label={`Go to slide ${dotIdx + 1}`} />
+                <button key={dotIdx} onClick={() => setIndex(dotIdx)} className={`h-2 w-8 rounded-full ${dotIdx === index ? 'dot-active' : 'dot-inactive'}`} aria-label={`Go to slide ${dotIdx + 1}`} />
               ))}
             </div>
           </>

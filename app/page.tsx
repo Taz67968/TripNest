@@ -30,7 +30,7 @@ export default function Home() {
       className="relative min-h-screen w-full flex items-center justify-center bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-overlay" />
         <div className="relative z-10 text-center text-sky-300 px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Your Personal Guide to Every Destination

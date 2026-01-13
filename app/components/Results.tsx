@@ -256,16 +256,16 @@ export default function Results() {
   };
   return (
     <div className="p-6 space-y-10 max-w-7xl mx-auto">
-      <div className="flex" onClick={back}>
+      <div className="flex text-white" onClick={back}>
         <ChevronLeft />
         <p>Back</p>
       </div>
-      <div className="rounded-3xl p-8 shadow-xl bg-gray-900/80">
+      <div className="rounded-3xl p-8 shadow-xl bg-card">
         {loadingCountry && <p>Loading country info...</p>}
         {countryError && <p className="text-red-400">{countryError}</p>}
         {!loadingCountry && !countryError && country && (
           <>
-            <h1 className="text-2xl font-bold mb-4">COUNTRY INFO:</h1>
+            <h1 className="text-2xl font-bold mb-4 text-white">COUNTRY INFO:</h1>
             <div className="flex  justify-evenly flex-col md:flex-row gap-8 items-center p-6 rounded-3xl text-white">
               <div className="">
                 <img
@@ -308,8 +308,8 @@ export default function Results() {
       <div
         className={`rounded-3xl p-8 text-white shadow-xl ${
           isRain
-            ? "bg-linear-to-br from-slate-600 to-slate-800"
-            : "bg-linear-to-br from-sky-400 via-blue-500 to-indigo-600"
+            ? "bg-gradient-to-br from-slate-700 to-slate-900"
+            : "bg-gradient-to-br from-sky-700 via-indigo-700 to-indigo-900"
         }`}
       >
         {loadingWeather && <p>Loading weather...</p>}
@@ -351,28 +351,28 @@ export default function Results() {
             </div>
 
             <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-10">
-              <div className="bg-white/10 rounded-xl p-4">
+              <div className="bg-glass rounded-xl p-4">
                 ☔ Rain
                 <p className="text-lg font-semibold">
                   {weather.forecast.forecastday[0].day.daily_chance_of_rain}%
                 </p>
               </div>
 
-              <div className="bg-white/10 rounded-xl p-4">
+              <div className="bg-glass rounded-xl p-4">
                 🌡 Feels Like
                 <p className="text-lg font-semibold">
                   {weather.current.feelslike_c}°C
                 </p>
               </div>
 
-              <div className="bg-white/10 rounded-xl p-4">
+              <div className="bg-glass rounded-xl p-4">
                 💨 Wind
                 <p className="text-lg font-semibold">
                   {weather.current.wind_kph} km/h
                 </p>
               </div>
 
-              <div className="bg-white/10 rounded-xl p-4">
+              <div className="bg-glass rounded-xl p-4">
                 💧 Humidity
                 <p className="text-lg font-semibold">
                   {weather.current.humidity}%
@@ -402,7 +402,7 @@ export default function Results() {
             {activities.map((activity, index) => (
               <div
                 key={index}
-                className="bg-white/10 p-6 rounded-xl text-white"
+                className="bg-glass p-6 rounded-xl text-white"
               >
                 <h2 className="text-xl font-semibold mb-2">{activity.title}</h2>
                 <p className="text-sm opacity-90">{activity.activity}</p>

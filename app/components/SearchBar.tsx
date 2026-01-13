@@ -22,13 +22,13 @@ export default function SearchBar() {
         placeholder="Enter a country or town"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="bg-gray-800 border border-gray-700 rounded-xl p-2 pt-3 w-full md:w-96 text-white placeholder-gray-400"
+        className="input w-full md:w-96"
         aria-label="Search"
       />
       <button
         type="submit"
         aria-label="Search"
-        className="-ml-10 p-2 bg-sky-600 rounded-xl text-white hover:bg-sky-500"
+        className="-ml-10 p-2 btn-primary rounded-xl text-white hover:brightness-95"
       >
         <Search size={16} />
       </button>

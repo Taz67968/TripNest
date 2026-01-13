@@ -32,3 +32,37 @@ body {
   min-height: 100vh;
   overflow-y: visible;
 }
+
+/* Dark palette variables */
+:root {
+  --background: #0b1220; /* page background */
+  --surface: #0f1724; /* surfaces and large cards */
+  --card: #0b1220; /* card backgrounds */
+  --muted: #94a3b8; /* muted text */
+  --primary: #60a5fa; /* accent (sky) */
+  --accent: #7c3aed; /* secondary accent */
+  --overlay: rgba(0, 0, 0, 0.65); /* overlays */
+  --glass: rgba(255, 255, 255, 0.03); /* subtle glass */
+  --glass-hover: rgba(255, 255, 255, 0.06);
+  --on-primary: #031029;
+}
+
+/* Utility helpers mapped to palette */
+.bg-surface { background-color: var(--surface); }
+.bg-card { background-color: var(--card); }
+.text-muted { color: var(--muted); }
+.bg-glass { background-color: var(--glass); backdrop-filter: blur(6px); }
+.bg-glass-hover { background-color: var(--glass-hover); backdrop-filter: blur(8px); }
+.bg-overlay { background-color: var(--overlay); }
+.badge-primary { background-color: var(--primary); color: var(--on-primary); }
+.badge-secondary { background-color: var(--accent); color: white; }
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+}
+.btn-primary:hover { filter: brightness(0.95); }
+.btn-ghost { background: rgba(255,255,255,0.03); }
+.btn-ghost:hover { background: rgba(255,255,255,0.06); }
+.dot-active { background: var(--primary); }
+.dot-inactive { background: rgba(148,163,184,0.28); }
+.input { background: var(--surface); border: 1px solid rgba(255,255,255,0.06); color: white; padding: 0.5rem 0.75rem; border-radius: 0.75rem; }

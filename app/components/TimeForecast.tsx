@@ -13,7 +13,7 @@ export default function HourlyForecast({ hours, currentTime }: Props) {
     .slice(0, 9);
 
   return (
-    <div className="w-full bg-white/10 backdrop-blur rounded-2xl p-6 shadow-md">
+    <div className="w-full bg-card backdrop-blur rounded-2xl p-6 shadow-md">
       <h2 className="text-sm font-semibold text-white/80 mb-4 tracking-wide">
         TODAY’S FORECAST
       </h2>
@@ -22,7 +22,7 @@ export default function HourlyForecast({ hours, currentTime }: Props) {
         {nextHours.map((hour) => (
           <div
             key={hour.time}
-            className="flex flex-col items-center min-w-29 bg-white/10 rounded-xl p-4 text-white text-center transition hover:bg-white/20"
+            className="flex flex-col items-center min-w-29 bg-glass rounded-xl p-4 text-white text-center transition hover:bg-glass-hover"
           >
             
             <p className="text-xs opacity-80">

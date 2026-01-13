@@ -55,7 +55,7 @@ export default function Convertor({ toCurrency }: Props) {
 
   return (
     <div className="mt-8 space-y-3">
-      <p className="font-bold">
+      <p className="font-bold text-white">
         Convert currency to {toCurrency}
       </p>
 
@@ -65,14 +65,14 @@ export default function Convertor({ toCurrency }: Props) {
           placeholder="e.g. 100 USD"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-            className="border-2 border-gray-300 rounded-xl px-4 py-2 flex-1 focus:outline-none"
+            className="border-2 border-gray-300 rounded-xl px-4 py-2 flex-1 focus:outline-none text-white"
         />
 
         <button
         type="button"
           onClick={handleConvert}
           disabled={loading}
-          className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold px-5 py-2 rounded-xl"
+          className="btn-primary disabled:opacity-50 text-white font-semibold px-5 py-2 rounded-xl"
         >
           {loading ? "Converting..." : "Convert"}
         </button>
