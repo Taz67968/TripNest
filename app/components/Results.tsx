@@ -108,40 +108,40 @@ export default function Results() {
     fetchActivities();
   }, [country]);
 
-  useEffect(() => {
-    if (!query) return;
+  // useEffect(() => {
+  //   if (!query) return;
 
-    const fetchHotels = async () => {
-      try {
-        const apiKey = process.env.NEXT_PUBLIC_RAPIDAPI_KEY;
+  //   const fetchHotels = async () => {
+  //     try {
+  //       const apiKey = process.env.NEXT_PUBLIC_RAPIDAPI_KEY;
 
-        if (!apiKey) {
-          throw new Error("Missing RapidAPI key");
-        }
+  //       if (!apiKey) {
+  //         throw new Error("Missing RapidAPI key");
+  //       }
 
-        const res = await fetch(
-          `https://hoteldiscoveryapi.p.rapidapi.com/api/hotels/destination/search?destination=${query}&q=${query}%20Hotels`,
-          {
-            headers: {
-              "X-RapidAPI-Key": apiKey,
-              "X-RapidAPI-Host": "hoteldiscoveryapi.p.rapidapi.com",
-            },
-          }
-        );
+  //       const res = await fetch(
+  //         `https://hoteldiscoveryapi.p.rapidapi.com/api/hotels/destination/search?destination=${query}&q=${query}%20Hotels`,
+  //         {
+  //           headers: {
+  //             "X-RapidAPI-Key": apiKey,
+  //             "X-RapidAPI-Host": "hoteldiscoveryapi.p.rapidapi.com",
+  //           },
+  //         }
+  //       );
 
-        if (!res.ok) throw new Error("Hotels fetch failed");
+  //       if (!res.ok) throw new Error("Hotels fetch failed");
 
-        const data = await res.json();
-        setHotel(data);
-      } catch (err) {
-        setHotelError("Failed to fetch hotels data");
-      } finally {
-        setLoadingHotels(false);
-      }
-    };
+  //       const data = await res.json();
+  //       setHotel(data);
+  //     } catch (err) {
+  //       setHotelError("Failed to fetch hotels data");
+  //     } finally {
+  //       setLoadingHotels(false);
+  //     }
+  //   };
 
-    fetchHotels();
-  }, [query]);
+  //   fetchHotels();
+  // }, [query]);
 
   useEffect(() => {
     if (!query) return;
@@ -389,7 +389,7 @@ export default function Results() {
           </>
         )}
       </div>
-      <div className="">
+      {/* <div className="">
         {loadingHotels && <p>Loading hotels...</p>}
         {hotelError && <p className="text-red-400">{hotelError}</p>}
         {!loadingHotels && !hotelError && (
@@ -410,7 +410,7 @@ export default function Results() {
             ))}
           </div>
         )}
-      </div>
+      </div> */}
       <section>
         {loadingImages && <p>Loading images...</p>}
         {imageError && <p className="text-red-400">{imageError}</p>}

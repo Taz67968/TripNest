@@ -1,4 +1,4 @@
-# TourGuide
+# Tripnest
 
  A simple responsive next js web app that allows users to search for a **country or city/town** and view detailed informations like the weather, currency, language(s) spoken, hotels etc.
 ---
@@ -34,13 +34,8 @@
 ```bash
 1. Clone repository:
 
-SSH
-git clone git@github.com:Robert-kelly19/TourGuide.git 
-
-or 
-
 HTTPS
-git clone https://github.com/Robert-kelly19/TourGuide.git
+git clone https://github.com/Taz67968/TripNest.git
 
 2. Install dependencies:
  npm install

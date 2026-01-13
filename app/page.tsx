@@ -3,9 +3,9 @@ import SearchBar from "@/app/components/SearchBar";
 import { useState, useEffect } from "react";
 
 const images = [
-  "/hero1.jpeg",
-  "/hero.jpeg",
-  "/hero2.jpeg",
+  "/download.jpeg",
+  "/images.jpeg",
+  "/T1.jpeg",
   "/hero3.jpg",
   "/hero4.jpg",
   "/hero5.jpg",
