@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TourGuide",
+  title: "TripNest",
   description: "A tour guide web app built with Next.js",
 };
 
@@ -25,10 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-900 text-white min-h-screen`}
       >
         {children}
       </body>
     </html>
-  );
+  )
 }

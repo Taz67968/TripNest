@@ -31,7 +31,7 @@ export default function Home() {
       style={{ backgroundImage: `url(${bg})` }}
     >
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center text-blue-500 px-4">
+        <div className="relative z-10 text-center text-sky-300 px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Your Personal Guide to Every Destination
           </h1>
